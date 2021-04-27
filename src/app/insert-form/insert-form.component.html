@@ -1,0 +1,14 @@
+<div>
+    <button (click) = "mostraFormParametri()">Aggiungi Student</button><br><br>
+    <form *ngIf="nascondi">
+        <label>Name</label>
+        <input type="text" placeholder="Name" required [(ngModel)]="employee.name" [ngModelOptions]="{standalone: true}"><br>
+        <label>Surname</label>
+        <input type="text" placeholder="Surname" required [(ngModel)]="employee.surname" [ngModelOptions]="{standalone: true}"><br>
+        <label>Sidi Code</label>
+        <input type="text" placeholder="Sidi Code" required [(ngModel)]="employee.sidiCode" [ngModelOptions]="{standalone: true}"><br>
+        <label>Tax Code</label>
+        <input type="text" placeholder="Tax Code" required [(ngModel)]="employee.taxCode" [ngModelOptions]="{standalone: true}"><br><br>
+        <button (click)="addEmployee()">Aggiungi</button>
+    </form>
+</div>

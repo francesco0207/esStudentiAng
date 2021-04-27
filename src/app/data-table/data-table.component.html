@@ -1,0 +1,37 @@
+<div>
+    <h2>Student list</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Sidi Code</th>
+            <th>Tax Code</th>      
+            <th colspan="2">Actions</th>  
+        </tr>
+        <tr *ngFor="let item of data">
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.surname }}</td>
+            <td>{{ item.sidi_code }}</td>
+            <td>{{ item.tax_code }}</td>
+            <td><button id='{{ item.studentId }}' (click)='deleteStudent($event)'>Remove</button></td> 
+            <td><button id='{{ item.studentId }}' (click)="showForm($event)">Update</button></td>
+        </tr>
+    </table>
+    <br>
+    <div>
+        <form *ngIf="nascondi">
+            <label >Name</label>
+            <input type="text" placeholder="Name" required [(ngModel)]="student.name" [ngModelOptions]="{standalone: true}"><br>
+            <label >Surname</label>
+            <input type="text" placeholder="Surname" required [(ngModel)]="student.surname" [ngModelOptions]="{standalone: true}"><br>
+            <label >Sidi Code</label>
+            <input type="text" placeholder="Sidi Code" required [(ngModel)]="student.sidiCode" [ngModelOptions]="{standalone: true}"><br>
+            <label >Tax Code</label>
+            <input type="text" placeholder="Tax Code" required [(ngModel)]="student.taxCode" [ngModelOptions]="{standalone: true}"><br><br>
+            <button (click)="updateStudent()">Update</button>   
+        </form>
+    </div>
+    <br>
+    </div>
